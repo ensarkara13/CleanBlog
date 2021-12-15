@@ -12,12 +12,25 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-heading">
+            <div class="post-heading col-md-8">
               <h1><%= post.title %></h1>
               <h2 class="subheading"><%= post.detail %></h2>
               <span class="meta">
                 Posted on <%= post.dateCreated.toDateString() %>
               </span>
+            </div>
+            <div class="">
+              <a
+                href="/posts/edit/<%= post._id %>"
+                class="btn btn-primary"
+                >Edit</a
+              >
+              <a
+                href="/posts/<%= post._id %>?_method=DELETE"
+                class="btn btn-danger"
+                onclick="return confirm('Silmek istediğinize emin misiniz?')"
+                >Delete</a
+              >
             </div>
           </div>
         </div>
